@@ -43,15 +43,22 @@ function getHistory() {
     }
 }
 
-function clearLog() {
-    if (!historyContainer) {
-        historyContainer = document.getElementById("responseFromServer");
+function clearRequests() {
+    if (!historyContainer ) {
+        historyContainer = document.getElementById("requestsFromServer");
     }
     while (historyContainer.firstChild) {
         historyContainer.removeChild(historyContainer.firstChild);
     }
 }
-
+function clearResponses() {
+    if (!responseContainer ) {
+        responseContainer = document.getElementById("responseFromServer");
+    }
+    while (responseContainer.firstChild) {
+        responseContainer.removeChild(responseContainer.firstChild);
+    }
+}
 function createLogLine(msg) {
     var date = new Date();
     var logLine = document.createElement("li");
